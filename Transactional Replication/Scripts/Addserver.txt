@@ -1,0 +1,8 @@
+select @@servername
+go
+
+sp_dropserver 'RGI16HARDEN'
+go
+
+sp_addserver 'RGIPGPSMOBDB', local
+go

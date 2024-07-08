@@ -1,0 +1,19 @@
+Error messages:
+The process could not execute 'sp_repldone/sp_replcounters' on 'RGIDBLUTXPASSDB'. (Source: MSSQL_REPL, Error number: MSSQL_REPL20011)
+Get help: http://help/MSSQL_REPL20011
+
+Only one Log Reader Agent or log-related procedure (sp_repldone, sp_replcmds, and sp_replshowcmds) can connect to a database at a time. 
+If you executed a log-related procedure, drop the connection over which the procedure was executed or execute sp_replflush over that connection 
+before starting the Log Reader Agent or executing another log-related procedure. (Source: MSSQLServer, Error number: 18752)
+Get help: http://help/18752
+
+The process could not set the last distributed transaction. (Source: MSSQL_REPL, Error number: MSSQL_REPL22017)
+Get help: http://help/MSSQL_REPL22017
+
+The process could not execute 'sp_repldone/sp_replcounters' on 'RGIDBLUTXPASSDB'. (Source: MSSQL_REPL, Error number: MSSQL_REPL22037)
+Get help: http://help/MSSQL_REPL22037
+
+solution:
+
+Post failback
+Just executed sp_replrestart

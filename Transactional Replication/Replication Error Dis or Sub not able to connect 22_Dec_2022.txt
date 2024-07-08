@@ -1,0 +1,10 @@
+MSSQL_ENG	HYT00	Query timeout expired, Failed Command: 
+MSSQL_REPL	0	The process could not connect to Subscriber 'RGIDWHDB02\DSTBRSQL16'.
+MSSQL_ENG	-1	SQL Server Network Interfaces: Error Locating Server/Instance Specified [xFFFFFFFF]. 
+MSSQL_ENG	-1	A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online.
+
+
+
+ReSolution:
+
+Check alieses on both 64 an 32 bit with hostname\instancename., created if missing

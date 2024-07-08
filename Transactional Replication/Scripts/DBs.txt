@@ -1,0 +1,39 @@
+USE [master]
+RESTORE DATABASE [MyDocs] FROM  DISK = N'E:\RGIICMDB\MyDocs\MyDocs_Full_46286406269678_2020-10-14_10-55-47.bak' 
+WITH  FILE = 1,  MOVE N'MyDocs' TO N'I:\Datafiles\MyDocs.mdf',  MOVE N'MyDocs_log' TO N'I:\Logfiles\MyDocs_log.ldf', 
+NORECOVERY,  NOUNLOAD,  REPLACE,  STATS = 1
+GO
+
+
+USE [master]
+RESTORE DATABASE [dbICMSys] FROM  DISK = N'E:\RGIICMDB\dbICMSys\dbICMSys_FULL_14102020_1632.bak' 
+WITH  FILE = 1,  MOVE N'dbInwardNew_Data' TO N'G:\SQLDatafiles\dbICMSys.MDF',  MOVE N'dbInwardNew_Log' TO N'G:\SQLLogfiles\dbICMSys_1.LDF',  
+NORECOVERY,  NOUNLOAD,  STATS = 1
+GO
+
+
+USE [master]
+RESTORE DATABASE [ICM3_stagging_Arc] FROM  DISK = N'E:\RGIICMDB\icm3_staging_arc\ICM3_stagging_Arc_FULL_14102020_1937.bak' 
+WITH  FILE = 1,  MOVE N'icm2_stagging_Arc' TO N'F:\SQLDatafiles\icm2_stagging_Arc.mdf',  MOVE N'icm2_stagging_Arc_log' 
+TO N'F:\SQLLogfiles\icm2_stagging_Arc_log.ldf',  NORECOVERY,  NOUNLOAD,  STATS = 1
+GO
+
+
+USE [master]
+RESTORE DATABASE [ICMManger] FROM  DISK = N'E:\RGIICMDB\ICMManager\ICMManager_Full_48757957853530_2020-10-14_11-07-11.bak' 
+WITH  FILE = 1,  MOVE N'ICMManager' TO N'E:\Datafiles\ICMManager.mdf',
+MOVE N'ICMManager_Data' TO N'E:\Datafiles\ICMManager_1.ndf',
+MOVE N'ICMManager_Data_1' TO N'E:\Datafiles\ICMManager_2.ndf',
+MOVE N'ICMManager_Data_2' TO N'E:\Datafiles\ICMManager_Data_2.ndf',
+MOVE N'ICMManager_log' TO N'E:\LogFiles\ICMManager_1.ldf'
+ Replace, NORECOVERY,  NOUNLOAD,  STATS = 1
+GO
+
+
+USE [master]
+RESTORE DATABASE [ICMManager_Arc] FROM  DISK = N'E:\RGIICMDB\ICMManager_Arc\ICMManager_Arc_Full_36585384528636_2020-10-14_11-28-31.bak' 
+WITH  FILE = 1,  
+MOVE N'ICMManager_Arc' TO N'H:\SQLDatafiles\ICMManager_Arc.mdf',  
+MOVE N'ICMManager_Arc_log' TO N'H:\SQLLogfiles\ICMManager_Arc_log.ldf',  
+NORECOVERY,  NOUNLOAD,  STATS = 1
+GO

@@ -1,0 +1,25 @@
+when we get below error after failover and failback always on group
+
+Unable to query the redirected server 'RGIIRPASLIS01' for original publisher 
+'RGIPIRPASAG01' and publisher database 'IRPAS' to determine the name of the remote server; 
+Error 1326, Error message 'Error 1326, Level 16, State 1, 
+Message: Named Pipes Provider: Could not open a connection to SQL Server [1326]. '. 
+(Source: MSSQL_REPL, Error number: MSSQL_REPL21879)
+
+We executed 
+
+Redirect orignal Publisher to AG (run on distributor)
+
+USE distribution;
+GO
+EXEC sys.sp_redirect_publisher
+	@original_publisher = 'Publisher_servername',
+	@publisher_db = 'Publisher_databasename',
+	@redirected_publisher = 'AGListnername,port'
+
+DBCC TRACEON(1448,-1)===replicated transactions are waiting for next log backup or for mirroring partner to catch up
+
+as distributor was unable to communicate with ag listner
+we did host entry for ag listner at distributor server
+
+--changed datasource of listnerlinkserver with port

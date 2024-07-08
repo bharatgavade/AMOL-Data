@@ -1,0 +1,32 @@
+
+select  
+db_name() PublisherDB 
+, sp.name as PublisherName 
+, sa.name as TableName 
+, UPPER(srv.srvname) as SubscriberServerName 
+from dbo.syspublications sp  
+join dbo.sysarticles sa on sp.pubid = sa.pubid 
+join dbo.syssubscriptions s on sa.artid = s.artid 
+join master.dbo.sysservers srv on s.srvid = srv.srvid 
+--order by PublisherName asc
+order by TableName asc
+
+--sp_helpsubscription
+--EXEC sp_helpdistributor;  
+select * from sys.databases where is_published <>0 
+go
+select * from sys.databases where is_subscribed <>0 
+go
+select * from sys.databases where is_distributor <>0 
+
+----------------------
+
+
+SELECT st.name [published object], st.schema_id, st.is_published , st.is_merge_published, is_schema_published  
+FROM sys.tables st WHERE st.is_published = 1 or st.is_merge_published = 1 or st.is_schema_published = 1  
+UNION  
+SELECT sp.name, sp.schema_id, 0, 0, sp.is_schema_published  
+FROM sys.procedures sp WHERE sp.is_schema_published = 1  
+UNION  
+SELECT sv.name, sv.schema_id, 0, 0, sv.is_schema_published  
+FROM sys.views sv WHERE sv.is_schema_published = 1;

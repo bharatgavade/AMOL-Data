@@ -1,0 +1,10 @@
+--disable trigger before configure replication
+
+use msdb
+go
+select name,is_disabled,create_date,modify_date from msdb.sys.triggers where name='tr_SysJobs_enabled'
+go
+DISABLE TRIGGER dbo.tr_SysJobs_enabled ON msdb.[dbo].[sysjobs]
+GO  
+ENABLE TRIGGER dbo.tr_SysJobs_enabled ON [dbo].[sysjobs]
+

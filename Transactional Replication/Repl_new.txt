@@ -1,0 +1,173 @@
+
+==============Distributor-------------------------------------------
+
+--STEP 1: Configure Distributor on Remote Server (which is not a part of AG)
+
+USE master;
+GO
+EXEC sys.sp_adddistributor
+	@distributor = 'RGIDWHDB02\DSTBRSQL16',
+	@password = 'RGI@1234';
+
+
+
+--STEP 2: Create distributor database
+
+USE master;
+GO
+EXEC sys.sp_adddistributiondb
+	@database = 'ICMdistributionDB',
+	@security_mode = 1;
+
+	RECONFIGURE
+
+--STEP 3: Add publisher (Primary Replica) to the distributor, run the below query on distributor
+
+USE master;
+GO
+EXEC sys.sp_adddistpublisher
+	@publisher = 'RGIPICMDB',
+	@distribution_db = 'ICMdistributionDB',
+	@working_directory = '\\RGIDWHDB02\ICM_Staging_Azure',
+ 	@security_mode = 1
+
+USE master;
+GO
+EXEC sys.sp_adddistpublisher
+	@publisher = 'RGIIRPASDBAG01',
+	@distribution_db = 'distribution',
+	@working_directory = '\\RGIDWHDB02\Snapshot16',
+ 	@security_mode = 1
+
+-----------------------------------------------------------------------------
+
+
+============================Publisher------------------------------------
+
+STEP 4: Add remote distributor to Publisher (Primary Replica)
+
+exec sys.sp_adddistributor
+	@distributor = 'RGIDWHDB02\DSTBRSQL16',
+	@password = 'RGI@1234'
+----------------------------------------------------------------------------
+Step 5:
+
+Create publication & subcriber
+
+---------------------------------Distributor--------------------------------------
+STEP 7: Add all secondary replica's as possible publisher in case of failover of AG
+Run below query on distributor
+
+EXEC sys.sp_adddistpublisher
+	@publisher = 'RGIIRPASDBAG02',
+	@distribution_db = 'distribution',
+	@working_directory = '\\RGIDWHDB02\Snapshot16',
+ 	@security_mode = 1
+
+
+EXEC sys.sp_adddistpublisher
+	@publisher = 'RGIIRPASDBAG02,7359',
+	@distribution_db = 'distribution',
+	@working_directory = '\\RGIDWHDB02\Snapshot16',
+ 	@security_mode = 1
+=============================================================================
+-----------------------------------Publisher--------------------------------------------------
+
+
+STEP 8 : add distributor (On Publisher)
+
+EXEC sp_adddistributor
+	@distributor = 'RGIDWHDB02\DSTBRSQL16',
+	@password = 'clover@123'
+
+---------------------------------------------------------------------------
+
+STEP 9:
+
+Link Server
+
+true Data access and other
+SA login & owner
+===================================================================================================
+-------------------------------Distributor----------------------------------------------------------------
+STEP 10: Redirect orignal Publisher to AG (run on distributor)
+
+
+USE distribution;
+GO
+EXEC sys.sp_redirect_publisher
+	@original_publisher = 'RGIIRPASDBAG01',
+	@publisher_db = 'IRPAS',
+	@redirected_publisher = 'RGIIRPASLIST,7359'
+
+
+DBCC TRACEON(1448,-1)===replicated transactions are waiting for next log backup or for mirroring partner to catch up
+
+============================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TITLE: Connect to Server
+------------------------------
+
+Cannot connect to RGIIRPASDBAG01.
+
+------------------------------
+ADDITIONAL INFORMATION:
+
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - The remote computer refused the network connection.) (Microsoft SQL Server, Error: 1225)
+
+For help, click: http://go.microsoft.com/fwlink?ProdName=Microsoft%20SQL%20Server&EvtSrc=MSSQLServer&EvtID=1225&LinkId=20476
+
+------------------------------
+
+The remote computer refused the network connection
+
+------------------------------
+BUTTONS:
+
+OK
+------------------------------
+

@@ -1,0 +1,18 @@
+Use Master
+GO;
+
+Alter Database Tempdb
+modify file ( name = tempdev, filename = 'J:\SQLTempDB\tempdb.mdf');
+Go
+
+Alter Database Tempdb
+modify file ( name = temp2, filename = 'J:\SQLTempDB\tempdb_msql_2.ndf');
+go
+
+Alter Database Tempdb
+modify file ( name = templog, filename = 'J:\SQLTempDB\templog.ldf');
+go
+
+tempdev tempdb.mdf
+templog  templog.ldf
+temp2  tempdb_msql_2.ndf

@@ -1,0 +1,13 @@
+We are getting Log reader agent error 
+
+Agent 'RGIPIRPASAG01-IRPAS-2' is retrying after an error. 17 retries attempted. 
+See agent job history in the Jobs folder for more details.
+
+then we check that log reader agent at subscriber server and we gor error
+
+Message
+Unable to start execution of step 2 (reason: Error authenticating proxy reliancecapital\sa_rgiclsqlservice, system error: 
+The security database on the server does not have a computer account for this workstation trust relationship.)
+
+Then we check inside the Job and found step 2 was running under above account so we change it to run under 
+SQL server agent service acount

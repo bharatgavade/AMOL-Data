@@ -1,0 +1,33 @@
+Error messages:
+The SQL Server instance 'RGIDICMGPSMOMDB' is not a replication publisher. Run sp_adddistributor on SQL Server instance 
+'RGIDICMGPSMOMDB' with distributor 'RGIDWHDB02\DSTBRSQL16' in order to enable the instance to host the 
+publishing database 'ICMManager'. Make certain to specify the same login and password as that used for the original publisher. 
+(Source: MSSQL_REPL, Error number: MSSQL_REPL21889)
+Get help: http://help/MSSQL_REPL21889
+Errors were logged when validating the redirected publisher. (Source: MSSQL_REPL, Error number: MSSQL_REPL22037)
+Get help: http://help/MSSQL_REPL22037
+
+For trouble-shoot We executed below query
+
+on Distributor Database
+
+EXEC sys.sp_adddistpublisher
+	@publisher = 'RGIDICMGPSMOMDB',
+	@distribution_db = 'ICMDistributionDB',
+	@working_directory = '\\RGIDWHDB02\SnapSQL16',
+ 	@security_mode = 1
+
+Error:- Msg 14074, Level 16, State 1, Procedure sp_MSrepl_adddistpublisher, Line 409 [Batch Start Line 0]
+The server 'RGIDICMGPSMOMDB' is already listed as a Publisher.
+
+
+Then 
+
+We executed below query on Current Publisher server .. on master database
+
+STEP 8 : add distributor (On Publisher)
+
+EXEC sp_adddistributor
+	@distributor = 'RGIDWHDB02\DSTBRSQL16',	-- Distributor server
+	@password = 'xxxx'	--Distributor Pass
+

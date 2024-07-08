@@ -1,0 +1,12 @@
+first compare indexes at both publisher and subsciber table.
+if any extraa index at publisher then truncate subscriber table and 
+create new extraa index in subscriber table.
+
+while adding article in publication choose In destination Object
+Action if name in use-> Truncate all data in the existing object
+
+
+select count(1) from  with (nolock)
+
+SELECT immediate_sync, allow_anonymous,*
+FROM syspublications

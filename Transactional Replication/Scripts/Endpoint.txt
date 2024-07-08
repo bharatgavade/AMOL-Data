@@ -1,0 +1,8 @@
+Alter Availability group ICMAG
+modify replica on 'RGIPICMDB' with (endpoint_url = 'TCP://10.62.190.24:5022')
+go
+
+
+Alter Availability group ICMAG
+modify replica on 'RGIDICMGPSMOMDB' with (endpoint_url = 'TCP://10.62.174.4:5022')
+go

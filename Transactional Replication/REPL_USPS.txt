@@ -1,0 +1,6 @@
+sp_replcounters
+sp_replcmds
+sp_repltrans  
+sp_replrestart
+
+select * from msrepl_errors order by 2 desc
