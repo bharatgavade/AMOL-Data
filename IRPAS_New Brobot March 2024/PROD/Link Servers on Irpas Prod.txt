@@ -1,0 +1,904 @@
+USE [master]
+GO
+
+/****** Object:  LinkedServer [10.10.151.54,7359]    Script Date: 3/7/2024 6:41:31 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'10.10.151.54,7359', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'10.10.151.54,7359',@useself=N'False',@locallogin=NULL,@rmtuser=N'o2ms',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'rpc', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'rpc out', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.10.151.54,7359', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [10.65.5.125,7359]    Script Date: 3/7/2024 6:41:31 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'10.65.5.125,7359', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'10.65.5.125,7359',@useself=N'False',@locallogin=NULL,@rmtuser=N'irpas',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.125,7359', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [10.65.5.140,7359]    Script Date: 3/7/2024 6:41:31 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'10.65.5.140,7359', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'10.65.5.140,7359',@useself=N'False',@locallogin=NULL,@rmtuser=N'report',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.140,7359', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [10.65.5.181,7359]    Script Date: 3/7/2024 6:41:31 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'10.65.5.181,7359', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'10.65.5.181,7359',@useself=N'False',@locallogin=NULL,@rmtuser=N'RN',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'rpc', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'rpc out', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.181,7359', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [10.65.5.189,7359]    Script Date: 3/7/2024 6:41:31 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'10.65.5.189,7359', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'10.65.5.189,7359',@useself=N'False',@locallogin=NULL,@rmtuser=N'o2ms',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'rpc', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'rpc out', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.189,7359', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [10.65.5.227,7359]    Script Date: 3/7/2024 6:41:32 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'10.65.5.227,7359', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'10.65.5.227,7359',@useself=N'False',@locallogin=NULL,@rmtuser=N'irpas',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'rpc', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'rpc out', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.227,7359', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [10.65.5.232,7359]    Script Date: 3/7/2024 6:41:32 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'10.65.5.232,7359', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'10.65.5.232,7359',@useself=N'False',@locallogin=NULL,@rmtuser=N'o2ms',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'rpc', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'rpc out', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.232,7359', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [10.65.5.37,7359]    Script Date: 3/7/2024 6:41:32 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'10.65.5.37,7359', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'10.65.5.37,7359',@useself=N'False',@locallogin=NULL,@rmtuser=N'irpas',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.37,7359', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [10.65.5.68,7359]    Script Date: 3/7/2024 6:41:32 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'10.65.5.68,7359', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'10.65.5.68,7359',@useself=N'False',@locallogin=NULL,@rmtuser=N'irpas',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'10.65.5.68,7359', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [RGIDWHDB01,7359]    Script Date: 3/7/2024 6:41:32 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'RGIDWHDB01,7359', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'RGIDWHDB01,7359',@useself=N'False',@locallogin=NULL,@rmtuser=N'dwhteam',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'rpc', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'rpc out', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIDWHDB01,7359', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [RGIHCSDB]    Script Date: 3/7/2024 6:41:32 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'RGIHCSDB', @srvproduct=N'sql_server', @provider=N'SQLNCLI', @datasrc=N'RGIHCSLISTNER.brobot.com,7359'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'RGIHCSDB',@useself=N'False',@locallogin=NULL,@rmtuser=N'irpas',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIHCSDB', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [RGIICMDB.RELIANCECAPITAL.COM,7359]    Script Date: 3/7/2024 6:41:33 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'RGIICMDB.RELIANCECAPITAL.COM,7359', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'RGIICMDB.RELIANCECAPITAL.COM,7359',@useself=N'False',@locallogin=NULL,@rmtuser=N'IRPAS',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIICMDB.RELIANCECAPITAL.COM,7359', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [RGIIRPASDB]    Script Date: 3/7/2024 6:41:33 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'RGIIRPASDB', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'RGIIRPASDB',@useself=N'False',@locallogin=NULL,@rmtuser=N'irpasteam',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASDB', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [RGIIRPASRNDB]    Script Date: 3/7/2024 6:41:33 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'RGIIRPASRNDB', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'RGIIRPASRNDB',@useself=N'False',@locallogin=NULL,@rmtuser=N'RN',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIIRPASRNDB', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [RGIMOMAPPDB]    Script Date: 3/7/2024 6:41:33 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'RGIMOMAPPDB', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'RGIMOMAPPDB',@useself=N'False',@locallogin=NULL,@rmtuser=N'irpas',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIMOMAPPDB', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [RGIO2MSDB01]    Script Date: 3/7/2024 6:41:33 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'RGIO2MSDB01', @srvproduct=N'sql_server', @provider=N'SQLNCLI11', @datasrc=N'RGIO2MSDB01.reliancegeneral.com,7359'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'RGIO2MSDB01',@useself=N'False',@locallogin=NULL,@rmtuser=N'O2MS',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [RGIO2MSDB01,7360]    Script Date: 3/7/2024 6:41:33 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'RGIO2MSDB01,7360', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'RGIO2MSDB01,7360',@useself=N'False',@locallogin=NULL,@rmtuser=N'rpt_user',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIO2MSDB01,7360', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [RGIPO2MSDB]    Script Date: 3/7/2024 6:41:34 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'RGIPO2MSDB', @srvproduct=N'sql_server', @provider=N'SQLNCLI11', @datasrc=N'RGIO2MSDB01.reliancegeneral.com,7360'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'RGIPO2MSDB',@useself=N'False',@locallogin=NULL,@rmtuser=N'o2ms',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'rpc', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'rpc out', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIPO2MSDB', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [RGIRPASDB]    Script Date: 3/7/2024 6:41:34 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'RGIRPASDB', @srvproduct=N'sql_server', @provider=N'SQLNCLI11', @datasrc=N'rgirpasdb.reliancecapital.com,7359'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'RGIRPASDB',@useself=N'False',@locallogin=NULL,@rmtuser=N'report',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIRPASDB', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+/****** Object:  LinkedServer [RGIXPASDB,7359]    Script Date: 3/7/2024 6:41:34 PM ******/
+EXEC master.dbo.sp_addlinkedserver @server = N'RGIXPASDB,7359', @srvproduct=N'SQL Server'
+ /* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'RGIXPASDB,7359',@useself=N'False',@locallogin=NULL,@rmtuser=N'omni',@rmtpassword='########'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'collation compatible', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'data access', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'dist', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'pub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'rpc', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'rpc out', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'sub', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'connect timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'collation name', @optvalue=null
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'lazy schema validation', @optvalue=N'false'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'query timeout', @optvalue=N'0'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'use remote collation', @optvalue=N'true'
+GO
+
+EXEC master.dbo.sp_serveroption @server=N'RGIXPASDB,7359', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+GO
+
+

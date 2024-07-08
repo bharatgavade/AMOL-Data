@@ -1,0 +1,61 @@
+If replication
+collect Repl details
+-like list of articles, distribution connection, sub connection.		--Done
+
+Db User Roles									--Done
+
+Logins whose have Sysadmin or not						--Done
+
+Server Roles having explicit permissions					--Done
+
+db role having explicit permissions						--Done
+
+app jobs & dba jobs with schedules						--Done
+
+link server on that server and used as that server				--Done
+
+orphan users									--N/A
+
+credentials-> proxy account							--N/A
+
+db mail, maintainance plans							--Done
+
+check user table, user usp, user functions in master, msdb, model system databases --N/A
+
+triggers, operators, alerts, sp_configure					--Done
+
+-----------------------
+before migration take a full backup and keep it in restoring mode on new server.
+
+during migration change port no of existing prod server to another port -> internal point
+don't start sql agent if not req
+
+disable sql logins except dbateam
+
+put database in single user 
+put database in read_only -- not necessary
+diff databases backups
+set databases offline
+
+then post collect all req data from old server then stop and disable sql services
+
+--------------------
+
+additional
+
+in case of ip and hostname swapp
+
+
+SELECT @@SERVERNAME
+-- The result is: MyServerB
+
+--drop old server
+EXEC SP_DROPSERVER 'MyServerB' --old server name
+
+--add new server, make sure local is specified.
+EXEC SP_ADDSERVER 'MyServer', 'local' --new server name
+
+--Restart SQL Server services
+
+SELECT @@SERVERNAME
+-- The result is: MyServer 

@@ -1,0 +1,8 @@
+Import-Module FailoverClusters  
+
+Get-ClusterResource yourListenerName_NetworkName | Get-ClusterParameter RegisterAllProvidersIP
+Get-ClusterResource yourListenerName_NetworkName | Set-ClusterParameter RegisterAllProvidersIP 0   
+
+Stop-ClusterResource yourListenerName_NetworkName
+Start-ClusterResource yourListenerName_NetworkName
+Start-Clustergroup yourListenerGroupName

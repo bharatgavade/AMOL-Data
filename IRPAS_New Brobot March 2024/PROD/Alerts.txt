@@ -1,0 +1,61 @@
+USE [msdb]
+GO
+
+/****** Object:  Alert [AlwaysOn_DB_Resume]    Script Date: 3/8/2024 7:00:41 PM ******/
+EXEC msdb.dbo.sp_add_alert @name=N'AlwaysOn_DB_Resume', 
+		@message_id=35265, 
+		@severity=0, 
+		@enabled=1, 
+		@delay_between_responses=0, 
+		@include_event_description_in=0, 
+		@category_name=N'[Uncategorized]', 
+		@job_id=N'312f1b4c-12f4-4269-92d8-ebf84d8b5de4'
+GO
+
+/****** Object:  Alert [AlwaysOn_DB_Suspend]    Script Date: 3/8/2024 7:00:41 PM ******/
+EXEC msdb.dbo.sp_add_alert @name=N'AlwaysOn_DB_Suspend', 
+		@message_id=35264, 
+		@severity=0, 
+		@enabled=1, 
+		@delay_between_responses=0, 
+		@include_event_description_in=0, 
+		@category_name=N'[Uncategorized]', 
+		@job_id=N'8ec18146-8d7b-4164-ac29-61814390bd13'
+GO
+
+/****** Object:  Alert [AlwaysOnFailover_Alert]    Script Date: 3/8/2024 7:00:41 PM ******/
+EXEC msdb.dbo.sp_add_alert @name=N'AlwaysOnFailover_Alert', 
+		@message_id=1480, 
+		@severity=0, 
+		@enabled=1, 
+		@delay_between_responses=0, 
+		@include_event_description_in=0, 
+		@category_name=N'[Uncategorized]', 
+		@job_id=N'b7e0c1f0-5142-4732-a505-6ca9ec7b2cdd'
+GO
+
+/****** Object:  Alert [deadlock]    Script Date: 3/8/2024 7:00:41 PM ******/
+EXEC msdb.dbo.sp_add_alert @name=N'deadlock', 
+		@message_id=0, 
+		@severity=0, 
+		@enabled=1, 
+		@delay_between_responses=0, 
+		@include_event_description_in=0, 
+		@category_name=N'[Uncategorized]', 
+		@performance_condition=N'Locks|Number of Deadlocks/sec|_Total|>|1', 
+		@job_id=N'ef4aa402-ca91-4600-a4a7-075258a879f1'
+GO
+
+/****** Object:  Alert [TempDB Alert]    Script Date: 3/8/2024 7:00:41 PM ******/
+EXEC msdb.dbo.sp_add_alert @name=N'TempDB Alert', 
+		@message_id=0, 
+		@severity=0, 
+		@enabled=1, 
+		@delay_between_responses=1800, 
+		@include_event_description_in=0, 
+		@category_name=N'[Uncategorized]', 
+		@performance_condition=N'Databases|Data File(s) Size (KB)|tempdb|>|262144000', 
+		@job_id=N'f34d373a-300f-454c-a4e9-360d9d8f1483'
+GO
+
+
